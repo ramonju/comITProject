@@ -1,0 +1,10 @@
+extends layout.pug 
+
+block content 
+  include navbar.pug
+  p Diary Page
+  br
+  .add-entry-container 
+    .add-button 
+      p Add entry to diary 
+      a(href= '/addPage') ADD

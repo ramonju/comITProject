@@ -1,0 +1,18 @@
+extends layout.pug 
+
+block content 
+  include navbar.pug 
+  form(action='/addNewEntry' method='post')
+    .form-group
+      label(for='addTitle') Title
+      br
+      input#title.form-control(type='text' name='title')
+    .form-group
+      label(for='addContent') Description
+      br
+      textarea#description(name='description' cols='30' rows='5')
+    .form-group
+      label(for='addDate') Date
+      br
+      input#date(type='date' name='date')
+    input(type='submit' value='Add to Diary')
