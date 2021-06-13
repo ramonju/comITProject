@@ -7,7 +7,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 
-//this is to parse the data
+//this is to parse the data 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -63,6 +63,5 @@ Data.save().then(() => {
 })
     .catch(err => console.log(err));
 })
-app.listen(4000, () => {
-  console.log('Listening at port 4000...');
-});
+
+const port = process.env.PORT || 4000;
