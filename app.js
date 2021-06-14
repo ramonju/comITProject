@@ -97,8 +97,9 @@ Data.save().then(() => {
     .catch(err => console.log(err));
 })
 
-// const port = process.env.PORT || 4000;
-// app.listen(port);
-app.listen(3005, (req,res) => {
-  console.log('Listening to port 3005');
-});
+// this is the LIVE PORT - TURN THIS ON!!
+const port = process.env.PORT || 4000;
+app.listen(port);
+// app.listen(3005, (req,res) => {
+//   console.log('Listening to port 3005');
+// });
