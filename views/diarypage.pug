@@ -2,8 +2,6 @@ extends layout.pug
 
 block content 
   include navbar.pug
-  p Diary Page
-  br
   .add-entry-container 
     .add-button 
       p Add entry to diary 
@@ -11,8 +9,10 @@ block content
   
   .entered-data 
     each data in datas
-      h3= data.addTitle 
-      p= data.addDate
-      a(href='/diarypage/:id') View
+      .newly-added-entry
+        h3= data.addTitle 
+          .entry-content-date
+            p= data.addDate
+            a(href='diarypage/:id') View
 
   include footer.pug

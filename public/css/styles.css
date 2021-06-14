@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 * {
   margin: 0;
@@ -10,13 +11,22 @@ body {
   font-family: 'Montserrat';
 }
 
+.header-container > h4 {
+  font-family: "Satisfy";
+  color: burlywood;
+}
+
+.homeaboutcontact > a {
+  color:burlywood;
+}
 .homepage-container {
   display: block;
   box-sizing: border-box;
   width: 90%;
-  background-color: cadetblue;
+  background-color: rgb(66, 48, 48);
   height: 50%;
   text-align: center;
+  color: burlywood;
   font-family: 'Montserrat';
   padding: 100px;
   margin: auto;
@@ -30,6 +40,13 @@ body {
   border-radius: 10px;
 }
 
+.login-container > label, span {
+  color: rgb(66, 48, 48);
+}
+
+/* .login-container > span {
+  color: rgb(66, 48, 48);
+} */
 #login {
   padding-top: 10px;
 }
@@ -51,26 +68,35 @@ a {
 }
 
 .add-entry-container {
-  background-color: cadetblue;
+  background-color: rgb(66, 48, 48);
   width: 300px;
   padding: 15px;
   margin:auto;
+  margin-top: 20px;
   border-radius: 15px;
 }
 
 .add-button {
   justify-content: space-between;
   display: flex;
+  align-items: center;
 }
 
 .add-button > a {
-  background-color: rgb(136, 136, 102);
+  background-color: burlywood;
   margin-right: 30px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+}
 
+.add-button > p {
+  color: burlywood;
 }
 
 .add-page-container {
-  background-color: cadetblue;
+  background-color: rgb(66, 48, 48);
   width: 80%;
 }
 
@@ -78,7 +104,7 @@ a {
   box-sizing: border-box;
   display: flex;
   bottom: 0;
-  background-color: cadetblue;
+  background-color: rgb(66, 48, 48);
   width: 90%;
   margin: auto;
   margin-top: 10px;
@@ -92,10 +118,79 @@ a {
 .footer-container > ul > li {
   display: inline-block;
   justify-content: space-between;
+  color: burlywood;
 }
 
-.entered-data {
-  background-color: chocolate;
-  width: 50%;
+.footer-container > p {
+  color: burlywood;
+}
+
+.entered-data{
+  display:grid;
+  grid-template-columns: auto auto;
+  margin-top:4%;
+  width: 90%;
+  margin: auto;
   margin-top: 20px;
+  justify-content: space-between;
+}
+
+.newly-added-entry {
+  background-color: rgb(66, 48, 48);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.newly-added-entry > h3 {
+  font-size: 25px;
+  padding: 3px;
+  color: bisque;
+}
+
+.newly-added-entry > p {
+  font-size: 15px;
+  padding: 3px;
+}
+
+.newly-added-entry > a {
+  font-size: 15px;
+  padding: 3px;
+}
+
+.entry-content-date {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.contact-page {
+  background-color: rgb(66, 48, 48);
+  width: 90%;
+  text-align: center;
+  padding: 35px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+.contact-page > h1 {
+  color: burlywood;
+}
+
+.about-container {
+  background-color: rgb(66, 48, 48);
+  width: 90%;
+  text-align: center;
+  padding: 35px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+.about-container > h1 {
+  color: burlywood;
 }

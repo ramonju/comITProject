@@ -1,10 +1,21 @@
 const form = document.getElementById('login-form');
 form.addEventListener('submit', registerUser);
 
-function registerUser(event) {
+async function registerUser(event) {
   event.preventDefault()
-  const username = document.getElementById('username');
-  const password = document.getElementById('password');
+  const username = document.getElementById('username').value
+  const password = document.getElementById('password').value
 
-  fetch()
+  const result = await fetch('api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username,
+      password
+    })
+  }).then((res) => res.json())
+
+  console.log(result);
 }

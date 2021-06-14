@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // mongoClient will be used to connect to local server
-// const mongoClient = require('mongodb').MongoClient;
+const mongoClient = require('mongodb').MongoClient;
 //remove mongoClient to connect to live site
+
 //connect to local db
 // const dburl = 'mongodb://localhost:27017';
+ 
 // mongoClient.connect(dburl, (err, client) => {
 //   console.log('Connected to DB');
 // }); //remove this code to connect to live site
@@ -31,6 +33,7 @@ mongoose.connect(url, {
 .catch(err => console.log(err))
 
 const Diary = require('./models/diary');
+const { MongoClient } = require('mongodb');
 
 // routing to local server
 
@@ -50,6 +53,11 @@ const Diary = require('./models/diary');
 //Creating the index page and other pages
 app.get('/', (req,res) => {
   res.render('index', {});
+});
+
+app.post('api/register', async (req,res) =>{
+  console.log(req.body);
+  res.json({status:'ok'})
 });
 
 app.get('/about', (req,res) => {
@@ -73,10 +81,6 @@ app.get('/diarypage', (req,res) => {
   
 });
 
-app.get('/diarypage/:id', (req,res) => {
-  res.send(req.params.id)
-})
-
 app.get('/addPage', (req,res) => {
     res.render('addPage', {});
 });
@@ -95,11 +99,13 @@ Data.save().then(() => {
     res.redirect('/diarypage');
 })
     .catch(err => console.log(err));
-})
+});
 
-// this is the LIVE PORT - TURN THIS ON!!
+// this is the LIVE PORT - TURN THIS ON to view on site!!
 const port = process.env.PORT || 4000;
 app.listen(port);
+
+// uncomment this to access local server
 // app.listen(3005, (req,res) => {
 //   console.log('Listening to port 3005');
 // });

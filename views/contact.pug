@@ -3,5 +3,11 @@ extends layout.pug
 block content 
   include navbar.pug
 
-  h1 Contact Us
-  p This page will contain the contact details
+  .contact-page
+    h1 Contact Us
+      .contact-form-container
+        form
+          input(type="text", placeholder='Enter your name')
+          br
+          input(type="text" placeholder='Comment')
+          input(type="submit" value='Submit') 
