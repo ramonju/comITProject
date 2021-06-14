@@ -8,3 +8,11 @@ block content
     .add-button 
       p Add entry to diary 
       a(href= '/addPage') ADD
+  
+  .entered-data 
+    each data in datas
+      h3= data.addTitle 
+      p= data.addDate
+      a(href='/diarypage/:id') View
+
+  include footer.pug

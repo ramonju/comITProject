@@ -1,9 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+// mongoClient will be used to connect to local server
+// const mongoClient = require('mongodb').MongoClient;
+//remove mongoClient to connect to live site
+//connect to local db
+// const dburl = 'mongodb://localhost:27017';
+// mongoClient.connect(dburl, (err, client) => {
+//   console.log('Connected to DB');
+// }); //remove this code to connect to live site
 
 const app = express();
 
+// app.set('diarypage', __dirname + 'views/diarypage');
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 
@@ -23,6 +32,21 @@ mongoose.connect(url, {
 
 const Diary = require('./models/diary');
 
+// routing to local server
+
+// app.get('/', (req,res) => {
+//   mongoClient.connect(dburl, (err, client) => {
+//     const myDataBase = new client.db('mydatabase');
+//     const myCollections = myDataBase.collections('diaryentries');
+
+//     myCollections.find({}).toArray((err,documents) => {
+//       console.log(documents);
+//       client.close();
+//     });
+//     res.render()
+//   });
+// })
+
 //Creating the index page and other pages
 app.get('/', (req,res) => {
   res.render('index', {});
@@ -41,11 +65,20 @@ app.get('/navbar', (req,res) => {
 });
 
 app.get('/diarypage', (req,res) => {
-  res.render('diarypage', {});
+  Diary.find()
+    .then(datas => {
+      res.render('diarypage', {datas:datas});
+  })
+    .catch(err => console.log(err));
+  
 });
 
+app.get('/diarypage/:id', (req,res) => {
+  res.send(req.params.id)
+})
+
 app.get('/addPage', (req,res) => {
-  res.render('addPage', {});
+    res.render('addPage', {});
 });
 
 //adding a new entry in addPage, then redirecting to diarypage
@@ -64,5 +97,8 @@ Data.save().then(() => {
     .catch(err => console.log(err));
 })
 
-const port = process.env.PORT || 4000;
-app.listen(port);
+// const port = process.env.PORT || 4000;
+// app.listen(port);
+app.listen(3005, (req,res) => {
+  console.log('Listening to port 3005');
+});
