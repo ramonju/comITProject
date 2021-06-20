@@ -1,21 +1,16 @@
-doctype html 
-html(lang='en')
-  head
-    title NavBar
-    link(rel="stylesheet", href="css/navbar.css")
-    block styles
-  body
-    header 
-      .header-container 
-        h4 Never Forget
-        nav 
-          .homeaboutcontact
-            ul 
-              li
-                a(href= "/") Home
-              li
-                a(href= "/about") About
-              li
-                a(href= "/contact") Contact
-              li
-                a(href= "/diarypage") Diary
+extends layout.pug 
+
+block content
+  header 
+    .header-container 
+      h4 Never Forget
+      .homeaboutcontact
+        ul
+          li 
+            a(href='/') Home
+          li
+            a(href='/about') About
+          li
+            a(href='/contact') Contact
+          li
+            a(href='/diarypage') Diary

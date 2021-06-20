@@ -1,0 +1,20 @@
+extends layout.pug 
+
+block content 
+  include navbar.pug 
+  h3= 'Edit Diary'
+  form(action='/diarypage/edit' + data._id + '?_method=PUT' method='post')
+    input(type='hidden' name='_method' value='PUT')
+    .form-group
+      label(for='addTitle') Title
+      br
+      input(name='title' type='text' value= data.addTitle)
+    .form-group
+      label(for='addContent') Description
+      br
+      textarea(name='description' type='text' cols='30' rows='5')= data.addContent
+    .form-group
+      label(for='addDate') Date
+      br
+      input(type='date' name='date')
+    input(type='submit' value='Modify')

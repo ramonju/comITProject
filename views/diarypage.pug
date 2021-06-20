@@ -13,6 +13,6 @@ block content
         h3= data.addTitle 
           .entry-content-date
             p= data.addDate
-            a(href='diarypage/:id') View
+            a(href='/diarypage' + data._id) View
 
   include footer.pug

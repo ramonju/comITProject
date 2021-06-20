@@ -1,0 +1,14 @@
+block content 
+  include navbar.pug
+  .fullDetails
+    h3= data.addTitle 
+    p= data.addContent 
+    p= data.addDate
+    .editEntry
+      a(href='/diarypage') Back
+      a(href='/editDiary/edit' + data._id) Edit
+      form(action='/diarypage/delete' + data._id + '?_method=DELETE' method='post')
+      input(type='hidden' name='_method' value='DELETE')
+      input.delete(type='submit' value='Delete')
+
+  include footer.pug

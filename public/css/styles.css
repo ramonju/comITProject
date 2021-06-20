@@ -11,14 +11,41 @@ body {
   font-family: 'Montserrat';
 }
 
+.header-container {
+  background-color: rgb(66, 48, 48);
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
 .header-container > h4 {
   font-family: "Satisfy";
   color: burlywood;
+  padding: 10px;
+  font-size: 50px;
+  margin-left: 30px;
 }
 
-.homeaboutcontact > a {
-  color:burlywood;
+.homeaboutcontact {
+  background-color: rgb(66, 48, 48);
 }
+
+.homeaboutcontact > ul > li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.homeaboutcontact > ul > li > a {
+  text-decoration: none;
+  color: burlywood;
+  padding: 10px;
+  margin-left: 40px;
+}
+
 .homepage-container {
   display: block;
   box-sizing: border-box;
@@ -47,12 +74,13 @@ body {
 /* .login-container > span {
   color: rgb(66, 48, 48);
 } */
-#login {
+.login {
   padding-top: 10px;
 }
 
 label {
   font-weight: bold;
+  color: rgb(66, 48, 48);
 }
 
 #log {
@@ -61,10 +89,6 @@ label {
   height: 30px;
   font-family: 'Montserrat';
   font-weight: bold;
-}
-
-a {
-  text-decoration: none;
 }
 
 .add-entry-container {
@@ -83,7 +107,8 @@ a {
 }
 
 .add-button > a {
-  background-color: burlywood;
+  color: rgb(66, 48, 48);
+  background-color: rgb(223, 223, 178);
   margin-right: 30px;
   padding: 5px;
   font-size: 15px;
@@ -115,9 +140,16 @@ a {
   justify-content: space-between;
 }
 
-.footer-container > ul > li {
+.socialMedia > ul > li {
   display: inline-block;
+  list-style-type: none;
   justify-content: space-between;
+  color: burlywood;
+  padding: 50px;
+  font-size: 30px;
+}
+
+.socialMedia > ul > li > a {
   color: burlywood;
 }
 
@@ -167,6 +199,11 @@ a {
   margin-top: 10px;
 }
 
+.entry-content-date > a {
+  color: rgb(66, 48, 48);
+  text-decoration: underline;
+}
+
 .contact-page {
   background-color: rgb(66, 48, 48);
   width: 90%;
@@ -193,4 +230,35 @@ a {
 
 .about-container > h1 {
   color: burlywood;
+}
+
+.fullDetails {
+  background-color: rgb(66, 48, 48);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.fullDetails > h3 {
+  color: burlywood;
+}
+
+.fullDetails > p {
+  background-color: rgb(223, 223, 178);
+  color:rgb(66, 48, 48);
+  border-radius: 10px;
+}
+
+.editEntry > a {
+  display: inline-block;
+  width: 200px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  color: rgb(66, 48, 48);
+  background-color: rgb(223, 223, 178);
 }
