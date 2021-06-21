@@ -133,6 +133,8 @@ label {
   width: 90%;
   margin: auto;
   margin-top: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   padding: 10px;
   text-align: center;
   align-items: center;

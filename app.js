@@ -94,6 +94,7 @@ Data.save().then(() => {
     .catch(err => console.log(err));
 });
 
+//data.addTitle/Content/Date has to match the pug file. The req.body.title.description/date does not
 app.put('/diarypage/edit:id', (req,res) => {
   Diary.findOne({
     _id:req.params.id
@@ -107,13 +108,13 @@ app.put('/diarypage/edit:id', (req,res) => {
   });
 });
 
-app.delete('diarypage/delete:id', (req,res) => {
-  res.send(req.params.id)
-  // Diary.remove({
-  //   _id:req.params.id
-  // }).then(() => {
-  //   res.redirect('/diarypage');
-  // }).catch(err => console.log(err));
+
+app.delete('/diarypage/delete:id', (req,res) => {
+  Diary.remove({
+    _id:req.params.id
+  }).then(() => {
+    res.redirect('/diarypage');
+  }).catch(err => console.log(err));
 });
 
 // FINALLY! WITH THE VIEW BUTTON, THIS ONE ROUTES THE OBJECTID AND SENDS BACK THE INFO FOR THE OBJECT
