@@ -18,20 +18,23 @@ body {
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
 }
 
 .header-container > h4 {
   font-family: "Satisfy";
   color: burlywood;
   padding: 10px;
-  font-size: 50px;
+  font-size: 30px;
   margin-left: 30px;
 }
 
 .homeaboutcontact {
   background-color: rgb(66, 48, 48);
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .homeaboutcontact > ul > li {
@@ -58,6 +61,7 @@ body {
   padding: 100px;
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 30px;
 }
 
@@ -71,9 +75,6 @@ body {
   color: rgb(66, 48, 48);
 }
 
-/* .login-container > span {
-  color: rgb(66, 48, 48);
-} */
 .login {
   padding-top: 10px;
 }
@@ -125,21 +126,28 @@ label {
   width: 80%;
 }
 
-.footer-container {
-  box-sizing: border-box;
-  display: flex;
-  bottom: 0;
-  background-color: rgb(66, 48, 48);
-  width: 90%;
-  margin: auto;
+footer {
+  position:relative;
+}
+
+.footer {
+  position: fixed;
   margin-top: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  background: rgb(66, 48, 48);
+  height: 60px;
+  margin: auto;
+  width: 90%;
+  align-items: center;
+  text-align: center;
+  padding:10px;
+  color:burlywood;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  padding: 10px;
-  text-align: center;
-  align-items: center;
-  height: 100px;
-  justify-content: space-between;
 }
 
 .socialMedia > ul > li {
@@ -234,6 +242,13 @@ label {
   color: burlywood;
 }
 
+.about-container > p {
+  background-color: burlywood;
+  border-radius: 30px;
+  height: 200px;
+  display: table-cell;
+  vertical-align: middle;
+}
 .fullDetails {
   background-color: rgb(66, 48, 48);
   margin: 20px;
@@ -251,7 +266,7 @@ label {
 .fullDetails > p {
   background-color: rgb(223, 223, 178);
   color:rgb(66, 48, 48);
-  border-radius: 10px;
+  padding: 10px;
 }
 
 .editEntry > a {

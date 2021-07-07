@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const app = express();
 const mongoClient = require('mongodb').MongoClient;
 const methodOverride = require('method-override');
+const { MongoClient } = require('mongodb');
 
 dotenv.config();
 // mongoClient will be used to connect to local server
@@ -36,17 +37,12 @@ mongoose.connect(url, {
 }).then(console.log('MongoDB connected'))
 .catch(err => console.log(err))
 
-const { MongoClient } = require('mongodb');
+
 
 //Creating the index page and other pages
 app.get('/', (req,res) => {
   res.render('index', {});
 });
-
-// app.post('api/register', async (req,res) =>{
-//   console.log(req.body);
-//   res.json({status:'ok'})
-// });
 
 app.get('/about', (req,res) => {
   res.render('about', {});
@@ -110,7 +106,7 @@ app.put('/diarypage/edit:id', (req,res) => {
 
 
 app.delete('/diarypage/delete:id', (req,res) => {
-  Diary.remove({
+  Diary.deleteOne({
     _id:req.params.id
   }).then(() => {
     res.redirect('/diarypage');
